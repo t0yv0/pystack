@@ -8,6 +8,7 @@
   outputs = { self, nixpkgs }: let
 
     pypkgs = ps: with ps; [
+      jupyterlab
       matplotlib
       numpy
       pandas
