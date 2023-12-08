@@ -2,7 +2,7 @@
   description = "A flake defining Python with some extras";
 
   inputs = {
-    nixpkgs.url = github:NixOS/nixpkgs/nixos-23.05;
+    nixpkgs.url = github:NixOS/nixpkgs/nixos-23.11;
   };
 
   outputs = { self, nixpkgs }: let
@@ -12,7 +12,6 @@
       matplotlib
       numpy
       pandas
-      plotnine
       pytorch
       requests
       scikit-learn
@@ -22,7 +21,7 @@
 
     package = { system }:
       let pkgs = import nixpkgs { system = system; };
-      in pkgs.python310.withPackages pypkgs;
+      in pkgs.python311.withPackages pypkgs;
 
   in {
     packages.x86_64-linux.default = package {
